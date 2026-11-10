@@ -134,6 +134,20 @@ input[type="button"] {
     display: inline-block;
 }
 
+/* https://html.spec.whatwg.org/multipage/rendering.html#form-controls
+ * The spec rule also lists radio and checkbox inputs. They are left out for
+ * now: border-box would shrink the checkbox and radio painted here, so they
+ * need their own sizing change. */
+select,
+button,
+input[type="color"],
+input[type="search"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    box-sizing: border-box;
+}
+
 /* Button-flavored inputs clip their contents to the border box and never
  * produce a scrolling mechanism. This matches the UA stylesheet mandated by
  * the HTML standard (https://html.spec.whatwg.org/#form-controls) and prevents
